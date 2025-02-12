@@ -51,7 +51,7 @@
                 const books = [];
 
                 rows.forEach(row => {
-                    const [title, author, genre, isbn] = row.split(",");
+                    const [title, author, genre, isbn] = row.split(",").map(field => field.replace(/^"|"$/g, "").trim());
                     if (title) {
                         books.push({
                             title: title.trim(),
